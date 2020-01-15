@@ -7,5 +7,12 @@
             "email": "vs@zorca.org"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "InnoTest\\": "includes"
+        }
+    },
+    "require": {
+        "psr/container": "^1.0"
+    }
 }
