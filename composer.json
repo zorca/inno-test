@@ -1,0 +1,11 @@
+{
+    "name": "zorca/inno-test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Zorca Orcinus",
+            "email": "vs@zorca.org"
+        }
+    ],
+    "require": {}
+}
