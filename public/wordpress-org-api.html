@@ -7,13 +7,31 @@
 </head>
 <body>
 <div id="app">
-    <h1 class="title">WordPress Theme Search</h1>
-    <h2  class="title" v-if="search === 'zalupa'">Sam Zalupa</h2>
-    <ul>
-        <li v-for="theme in themes">{{ theme.name }}</li>
-    </ul>
-    <input type="text" v-model="search">
-    <button v-on:click="refresh">Search</button>
+    <section style="padding-top: 4rem;">
+        <div class="container">
+            <div class="level">
+                <div class="level-left">
+                    <div class="field has-addons">
+                        <div class="control">
+                            <input type="text" class="input" v-model="search">
+                        </div>
+                        <div class="control">
+                            <button class="button is-success" v-on:click="refresh">Search</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="level-right"><h1 class="title">WordPress Theme Search</h1></div>
+            </div>
+            <div class="columns is-multiline">
+                <div class="column is-3"  v-for="theme in themes">
+                    <div style="padding: 1rem; border: solid 2px #333; border-radius: 1rem">
+                        <h3 class="title">{{ theme.name }}</h3>
+                        <div><img style="height: 120px; width: auto;" v-bind:src="theme.screenshot_url"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 <script src="//unpkg.com/vue"></script>
 <script src="//unpkg.com/axios/dist/axios.js"></script>
