@@ -1,7 +1,3 @@
 <?php
 
-define ('BASE_PATH', __DIR__);
-
-require __DIR__ . '/vendor/autoload.php';
-
-new \InnoTest\App();
+require_once __DIR__.'/../app.php';

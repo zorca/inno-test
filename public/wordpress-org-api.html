@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>WordPress Theme Search</h1>
+<div id="shopping-list">
+    <ul>
+        <li v-for="theme in themes">{{ theme.name }}</li>
+    </ul>
+    <input type="text" v-model="search">
+    <button v-on:click="refresh">Search</button>
+</div>
+<script src="//unpkg.com/vue"></script>
+<script src="//unpkg.com/axios/dist/axios.js"></script>
+<script>
+    new Vue({
+            el: '#shopping-list',
+            data: {
+                themes: [],
+                search: ''
+            },
+            methods: {
+                refresh: function() {
+                    axios
+                        .get(`//api.wordpress.org/themes/info/1.1/?action=query_themes&request[search]=${this.search}`)
+                        .then(response => (this.themes = response.data.themes))
+                }
+            },
+            mounted () {
+                axios
+                    .get('//api.wordpress.org/themes/info/1.1/?action=query_themes')
+                    .then(response => (this.themes = response.data.themes))
+            }
+        });
+</script>
+</body>
+</html>
