@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 </head>
 <body>
-<h1>WordPress Theme Search</h1>
-<h2 v-if="search === 'zalupa'">Sam Zalupa</h2>
-<div id="shopping-list">
+<div id="app">
+    <h1 class="title">WordPress Theme Search</h1>
+    <h2  class="title" v-if="search === 'zalupa'">Sam Zalupa</h2>
     <ul>
         <li v-for="theme in themes">{{ theme.name }}</li>
     </ul>
@@ -19,7 +19,7 @@
 <script src="//unpkg.com/axios/dist/axios.js"></script>
 <script>
     new Vue({
-            el: '#shopping-list',
+            el: '#app',
             data: {
                 themes: [],
                 search: ''
