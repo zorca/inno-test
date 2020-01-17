@@ -25,7 +25,7 @@
             <div class="columns is-multiline">
                 <div class="column is-3"  v-for="theme in themes">
                     <div style="padding: 1rem; border: solid 2px #333; border-radius: 1rem">
-                        <h3 class="title">{{ theme.name }}</h3>
+                        <h3 class="title"><a v-bind:href="theme.homepage" target="_blank">{{ theme.name }}</a></h3>
                         <div><img style="height: 120px; width: auto;" v-bind:src="theme.screenshot_url"></div>
                     </div>
                 </div>
